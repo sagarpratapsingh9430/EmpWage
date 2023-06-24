@@ -8,14 +8,20 @@ public class EmployeeWage {
 
         int employeeHours = 0;
         int employeeWage = 0;
-        double empCheck = Math.floor(Math.random()*10)%3;
+        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-        if (empCheck == IS_PART_TIME){
-            employeeHours = 4;
-        }else if (empCheck == IS_FULL_TIME){
-            employeeHours = 8;
-        }else{
-            employeeHours = 0;
+        switch (empCheck) {
+            case 0:
+                employeeHours = 0;
+                break;
+            case 1:
+                employeeHours = 4;
+                break;
+            case 2:
+                employeeHours = 8;
+                break;
+            default:
+                System.out.println("Invalid choice");
         }
         employeeWage = employeeHours * EMPLOYEE_RATE_PER_HOUR;
         System.out.println(employeeWage);
