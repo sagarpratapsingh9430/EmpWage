@@ -1,12 +1,12 @@
 package com.bridgelabz;
 
-public class EmployeeWage {
+public class Variable {
     static final int EMPLOYEE_RATE_PER_HOUR = 20;
     static final int IS_PART_TIME = 1;
     static final int IS_FULL_TIME = 2;
     static final int TOTAL_WORKING_DAYS = 20;
     static final int TOTAL_WORKING_HOURS = 100;
-    public static void main(String[] args) {
+    public void employeeWage() {
 
         int employeeTotalWage = 0;
         int employeeHours = 0;
@@ -29,14 +29,18 @@ public class EmployeeWage {
                 default:
                     System.out.println("Invalid choice");
             }
-        employeeWage = employeeHours * EMPLOYEE_RATE_PER_HOUR;
-        employeeTotalWage += employeeWage;
-        workingHour+=employeeHours;
-        System.out.println("Day: " + day);
-        System.out.println("Daily employee wage: " + employeeWage);
-        System.out.println("Working hour: " + workingHour);
-        System.out.println();
-        day++;
+            employeeWage = employeeHours * EMPLOYEE_RATE_PER_HOUR;
+            employeeTotalWage += employeeWage;
+            workingHour+=employeeHours;
+            System.out.println("Day: " + day);
+            System.out.println("Daily employee wage: " + employeeWage);
+            System.out.println("Working hour: " + workingHour);
+            System.out.println();
+            day++;
+            if(workingHour>100){
+                workingHour=100;
+                employeeTotalWage=workingHour*EMPLOYEE_RATE_PER_HOUR;
+            }
         }
         System.out.println("Total employee wage after 20 days or 100 hours: " + employeeTotalWage);
     }
